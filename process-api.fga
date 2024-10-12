@@ -1,0 +1,14 @@
+model
+  schema 1.1
+
+type client
+
+type resource
+  relations
+    define parent: [process-api]
+    define can_consume: consumer from parent
+
+type process-api
+  relations
+    define consumer: [client]
+
